@@ -1,0 +1,30 @@
+{
+  "name": "echobot",
+  "version": "1.0.0",
+  "description": "express server",
+  "main": "Server.js",
+  "scripts": {
+    "client": "cd echobotclient && yarn start",
+    "server": "nodemon Server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "build": "webpack",
+    "prod": "node dist/api.bundle.js"
+  },
+  "proxy": "http://localhost:5000/",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.1.0",
+    "http-proxy-middleware": "^0.19.1",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
